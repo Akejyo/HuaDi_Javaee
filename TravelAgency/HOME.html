@@ -1,0 +1,95 @@
+<!--景区最大容量、停车位数量-->
+<!--游客数量-->
+<!--人员信息-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="js/jquery.js"></script>
+    <link href="css/TravelAgency.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div>
+        <!--顶部导航栏-->
+        <nav>
+            <ul>
+                <li> <a>&nbsp;</a></li>
+                <li><a href="experments.html">Experiments</a></li>
+                <li><a href="project.html">Project</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="HOME.html">Home</a></li>
+                <div class="nav-box"></div>
+            </ul>
+        </nav>
+    </div>
+
+    <!--饼状图-->
+    <div class="wrapper">
+        <h1 style="text-align: left;">Travel Agency</h1>
+        <div class="pie-charts">
+
+            <!--旅游车辆-->
+            <div class="pieID--TouristVehicle pie-chart--wrapper">
+                <h2>Tourist Vehicle</h2>
+                <div class="pie-chart">
+                    <div class="pie-chart__pie"></div>
+                    <ul class="pie-chart__legend">
+                        <!--正在使用的车辆-->
+                        <li><em>Vehicles in use</em><span id="2.1">768</span></li>
+                        <!--闲置车辆-->
+                        <li><em>Idle vehicle</em><span id="2.2">232</span></li>
+                        <!--待维修车辆-->
+                        <li><em>Vehicle to be serviced</em><span id="2.3">2</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--导游信息-->
+            <div class="pieID--Guide pie-chart--wrapper">
+                <h2>Guide</h2>
+                <div class="pie-chart">
+                    <div class="pie-chart__pie"></div>
+                    <ul class="pie-chart__legend">
+                        <!--工作中导游数量-->
+                        <li><em>Guide at work</em><span id="1.1">458</span></li>
+                        <!--闲置导游数量-->
+                        <li><em>Idle guide</em><span id="1.2">358</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="nullBlock" style="height: 40px;">&nbsp;</div>
+    <!--游客列表-->
+    <div class="touristListBlock">
+        <table class="touristList">
+            <tr>
+                <th>
+                    <h1>Name</h1>
+                </th>
+                <th>
+                    <h1>Phone Number</h1>
+                </th>
+            <tr>
+                <td>a</td>
+                <td>12345678910</td>
+            </tr>
+            <tr>
+                <td>b</td>
+                <td>123</td>
+            </tr>
+            <tr>
+                <td>b</td>
+                <td>123</td>
+            </tr>
+        </table>
+
+    </div>
+    <script src="js/TravelAgency.js"></script>
+</body>
+
+</html>

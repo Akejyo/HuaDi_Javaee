@@ -1,0 +1,435 @@
+html {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    height: 100%;
+    font-family: sans-serif;
+    background: linear-gradient(125deg, #2c3e50, #8e44ad, #149966, #0a4087, #672f7e);
+    background-size: 500%;
+    animation: bgAnimation 15s linear infinite;
+    --earth: #3498db;
+    --moon: #1abc9c;
+}
+
+.nine_box>table {
+    color: #fff;
+}
+
+.nine_box td {
+    width: 80px;
+}
+
+.body_box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    background: rgba(45, 15, 15, 0.511);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border-radius: 10px;
+}
+
+.nine_box {
+    /*九九乘法表*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 700px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    background: rgba(45, 15, 15, 0.511);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 600px) {
+    .body_box {
+        width: 300px;
+    }
+}
+
+.nine_box h2,
+.body_box h2 {
+    text-align: center;
+    margin: 0 0 20px;
+    padding: 0;
+    color: #fff;
+}
+
+.body_box .user_box {
+    position: relative;
+}
+
+.body_box .user_box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+}
+
+.body_box .user_box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.body_box .user_box input:focus {
+    border-bottom: 1px solid #03e9f4;
+}
+
+
+/*跳转按钮*/
+
+.body_box .jump_button {
+    font-size: 14px;
+    text-align: center;
+}
+
+.body_box .jump_button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    color: #666;
+    padding: 2px 10px;
+    transition: 0.5s;
+}
+
+.body_box .jump_button span:after {
+    content: "»";
+    position: absolute;
+    opacity: 0;
+    top: 1px;
+    right: -10px;
+    transition: 0.5s;
+}
+
+.body_box .jump_button span:hover:after {
+    opacity: 1;
+    color: #fff;
+    right: 12px;
+}
+
+.body_box .jump_button span:hover {
+    padding-right: 25px;
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 100px #03e9f4;
+}
+
+.body_box .user_box .email_label::after {
+    /*邮件输入不合法 报错信息*/
+    content: " incorrect format";
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.body_box .user_box .basic_label::after {
+    /*register基础信息填写不正确*/
+    content: " 6 to 16, letters or numbers or\"/\"or\" _\"";
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.body_box .user_box .name_login_label::after {
+    /*用户名不存在*/
+    content: " The user name does not exist";
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.body_box .user_box .password_login_label::after {
+    /*密码不正确*/
+    content: " Incorrect password";
+    opacity: 0;
+    transition: 0.5s;
+}
+
+
+/*下面几个是输出是否合法和label的移动，有的交换顺序会寄*/
+
+.body_box .user_box input:not(:placeholder-shown)~label,
+.body_box .user_box input:not(:placeholder-shown)~.email_label::after,
+.body_box .user_box input:not(:placeholder-shown)~.basic_label::after {
+    top: -30px;
+    left: 0;
+    color: #ed1c46;
+    font-size: 12px;
+    opacity: 1;
+}
+
+.body_box .user_box input:valid~.basic_label::after,
+.body_box .user_box input:valid~.email_label::after {
+    opacity: 0;
+}
+
+.body_box .user_box input:focus~label,
+.body_box .user_box input:valid~label {
+    top: -30px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+}
+
+
+/*提交*/
+
+.body_box .submit {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    overflow: hidden;
+    padding: 5px 20px;
+    color: #03e9f4;
+    font-size: 16px;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+    cursor: pointer;
+}
+
+.body_box .submit:hover {
+    background: #03e9f4;
+    color: #fff !important;
+    /*不加这个submitWrong就覆盖上去了*/
+    border-radius: 5px;
+    /*叠加阴影*/
+    box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 100px #03e9f4;
+}
+
+.body_box .submit span {
+    position: absolute;
+    display: block;
+}
+
+.body_box .submit:hover>span {
+    display: none;
+}
+
+
+/*4个线性动画*/
+
+.body_box .submit span {
+    border-radius: 100px;
+}
+
+.body_box .submit span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    /*渐变线*/
+    background: linear-gradient(90deg, #ff00905b, #03e9f4);
+    animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+    0% {
+        left: -100%;
+    }
+    50%,
+    100% {
+        left: 100%;
+    }
+}
+
+.body_box .submit span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, #ff00905b, #03e9f4);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+    0% {
+        top: -100%;
+    }
+    50%,
+    100% {
+        top: 100%;
+    }
+}
+
+.body_box .submit span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, #ff00905b, #03e9f4);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+    0% {
+        right: -100%;
+    }
+    50%,
+    100% {
+        right: 100%;
+    }
+}
+
+.body_box .submit span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, #ff00905b, #03e9f4);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+    0% {
+        bottom: -100%;
+    }
+    50%,
+    100% {
+        bottom: 100%;
+    }
+}
+
+.sun {
+    /*圆心 大小为0 用来让earth绕着旋转*/
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    animation: rotate 36.5s linear infinite;
+}
+
+.sun::after {
+    /*地球轨道*/
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #fff;
+    border-radius: 50%;
+    /*让轨道在下图层*/
+    z-index: -1;
+}
+
+.earth {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--earth);
+    left: 285px;
+    box-shadow: 0 0 10px var(--earth), 0 0 20px var(--earth), 0 0 30px var(--earth), 0 0 40px var(--earth);
+    animation: rotate 3s linear infinite;
+}
+
+.earth::after {
+    content: "";
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #fff;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.moon {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: var(--moon);
+    left: 52px;
+    box-shadow: 0 0 10px var(--moon), 0 0 20px var(--moon), 0 0 30px var(--moon), 0 0 40px var(--moon);
+}
+
+@keyframes rotate {
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes bgAnimation {
+    /*背景渐变*/
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/*----------Chess----------*/
+
+.chess td {
+    border: 2px solid #fff;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    vertical-align: middle;
+    font-family: "Verdana";
+    font-size: 4.3em;
+    cursor: pointer;
+}
+
+.chess {
+    position: relative;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border-collapse: collapse;
+}
+
+.chess td:hover {
+    background-color: #80a4a7;
+}
+
+.chess tr:first-child td {
+    border-top: 0;
+}
+
+.chess tr:last-child td {
+    border-bottom: 0;
+}
+
+.chess tr td:first-child {
+    border-left: 0;
+}
+
+.chess tr td:last-child {
+    border-right: 0;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link href="style.css" rel="stylesheet">
+    <script type="text/javascript" src="javascript.js"></script>
+</head>
+
+<body>
+    <div id="sun" class="sun" style="opacity: 0;">
+        <div class="earth">
+            <div class="moon"></div>
+        </div>
+    </div>
+    <div id="body_box" class="body_box" style="opacity: 0;">
+        <h2>Register</h2>
+        <form>
+            <div class="user_box">
+                <!--字母/数字/-/_且长度6~16-->
+                <input type="text" id="name" required placeholder=" " pattern="[a-zA-Z0-9_-]{6,16}">
+                <label class="basic_label">Username</label>
+            </div>
+            <div class="user_box">
+                <input type="password" id="password" required placeholder=" " pattern="[a-zA-Z0-9_-]{6,16}">
+                <label class="basic_label">Password</label>
+            </div>
+            <div class="user_box">
+                <input type="password" id="password2" required placeholder=" " pattern=".*">
+                <label class="basic_label">Repeat Password</label>
+            </div>
+            <div class="user_box">
+                <input type="email" id="email" required placeholder=" " pattern=".*">
+                <label class="email_label">Email</label>
+            </div>
+            <div class="submit" id="submit" onclick=javescrpt:Submit_register()>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span> SUBMIT
+            </div>
+        </form>
+        <!--跳转到登录-->
+        <div class="jump_button">
+            <span onclick=javascrtpt:jump_login()>
+                Login
+            </span>
+        </div>
+    </div>
+
+</body>
+
+</html>

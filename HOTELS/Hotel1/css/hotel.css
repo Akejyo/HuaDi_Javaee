@@ -1,0 +1,333 @@
+html {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: sans-serif;
+    background: linear-gradient(125deg, #2c3e50, #8e44ad, #149966, #0a4087, #672f7e);
+    background-size: 500%;
+    animation: bgAnimation 15s linear infinite;
+    text-align: center;
+}
+
+body * {
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+@keyframes bake-pie {
+    from {
+        transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+}
+
+h1,
+h2 {
+    color: white;
+}
+
+nav {
+    height: 0;
+    top: 0;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav ul li {
+    float: right;
+    width: 90px;
+    text-align: center;
+}
+
+
+/*导航栏的字体*/
+
+nav ul li a {
+    color: #fff;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 70px;
+}
+
+.nav-box {
+    position: absolute;
+    left: 0;
+    width: 90px;
+    height: 7px;
+    border-radius: 2px;
+    transition: 0.5s;
+}
+
+nav ul li:nth-child(2):hover~.nav-box {
+    left: calc(100% - 180px);
+    background-color: #fff
+}
+
+nav ul li:nth-child(3):hover~.nav-box {
+    left: calc(100% - 270px);
+    background-color: #fff
+}
+
+nav ul li:nth-child(4):hover~.nav-box {
+    left: calc(100% - 360px);
+    background-color: #fff
+}
+
+nav ul li:nth-child(5):hover~.nav-box {
+    left: calc(100% - 450px);
+    background-color: #fff
+}
+
+.pie-chart {
+    font-family: "Open Sans", Arial;
+}
+
+.pie-chart--wrapper {
+    width: 400px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.pie-chart__pie,
+.pie-chart__legend {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.pie-chart__pie {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    margin: 10px auto 35px;
+}
+
+.pie-chart__pie::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 1;
+    width: 100px;
+    height: 100px;
+    background: #EEE;
+    border-radius: 50%;
+    top: 50px;
+    left: 50px;
+}
+
+.pie-chart__pie::after {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 2px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    box-shadow: 0 0 3px 4px rgba(0, 0, 0, 0.1);
+    margin: 220px auto;
+}
+
+.slice {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    clip: rect(0px, 200px, 200px, 100px);
+    animation: bake-pie 1s;
+}
+
+.slice span {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    clip: rect(0px, 200px, 200px, 100px);
+}
+
+.pie-chart__legend {
+    display: block;
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+    background: #FFF;
+    padding: 0.75em 0.75em 0.05em;
+    font-size: 13px;
+    box-shadow: 1px 1px 0 #DDD, 2px 2px 0 #BBB;
+    text-align: left;
+    width: 65%;
+}
+
+.pie-chart__legend li {
+    height: 1.25em;
+    margin-bottom: 0.7em;
+    padding-left: 0.5em;
+    border-left: 1.25em solid black;
+}
+
+.pie-chart__legend em {
+    font-style: normal;
+}
+
+.pie-chart__legend span {
+    float: right;
+}
+
+.pie-charts {
+    display: flex;
+    flex-direction: row;
+}
+
+@media (max-width: 500px) {
+    .pie-charts {
+        flex-direction: column;
+    }
+}
+
+@keyframes bgAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.search {
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+
+.searchTerm {
+    width: 100%;
+    border: 3px solid #00B4CC;
+    border-right: none;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+}
+
+.searchTerm:focus {
+    color: #00B4CC;
+}
+
+.searchButton {
+    width: 40px;
+    height: 36px;
+    border: 1px solid #00B4CC;
+    background: #00B4CC;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+
+/*Resize the wrap to see the search bar change!*/
+
+.wrap {
+    width: 30%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.touristList {
+    color: #DDD;
+    margin: 10;
+}
+
+.touristList h1 {
+    font-weight: bold;
+    font-size: 1em;
+    text-align: left;
+    color: #185875;
+}
+
+.touristList td {
+    font-weight: normal;
+    font-size: 1em;
+    -webkit-box-shadow: 0 2px 2px -2px #0E1119;
+    -moz-box-shadow: 0 2px 2px -2px #0E1119;
+    box-shadow: 0 2px 2px -2px #0E1119;
+}
+
+.touristList {
+    text-align: left;
+    overflow: hidden;
+    width: 80%;
+    margin: 0 auto;
+    display: table;
+    padding: 0 0 8em 0;
+}
+
+.touristList td,
+.touristList th {
+    padding-bottom: 2%;
+    padding-top: 2%;
+    padding-left: 2%;
+}
+
+
+/* Background-color of the odd rows */
+
+.touristList tr:nth-child(odd) {
+    background-color: #323C50;
+}
+
+
+/* Background-color of the even rows */
+
+.touristList tr:nth-child(even) {
+    background-color: #2C3446;
+}
+
+.touristList th {
+    background-color: #1F2739;
+}
+
+.touristList td:first-child {
+    color: #FB667A;
+}
+
+.touristList tr:hover {
+    background-color: #464A52;
+    -webkit-box-shadow: 0 6px 6px -6px #0E1119;
+    -moz-box-shadow: 0 6px 6px -6px #0E1119;
+    box-shadow: 0 6px 6px -6px #0E1119;
+}
+
+.touristList td:hover {
+    background-color: #FFF842;
+    color: #403E10;
+    font-weight: bold;
+    box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
+    transform: translate3d(6px, -6px, 0);
+    transition-delay: 0s;
+    transition-duration: 0.4s;
+    transition-property: all;
+    transition-timing-function: line;
+}
+
+@media (max-width: 800px) {
+    .touristList td:nth-child(4),
+    .touristList th:nth-child(4) {
+        display: none;
+    }
+}

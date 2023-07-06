@@ -1,0 +1,121 @@
+<!--景区最大容量、停车位数量-->
+<!--游客数量-->
+<!--人员信息-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="js/jquery.js"></script>
+    <link href="css/Scenic.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div>
+        <!--顶部导航栏-->
+        <nav>
+            <ul>
+                <li> <a>&nbsp;</a></li>
+                <li><a href="experments.html">Experiments</a></li>
+                <li><a href="project.html">Project</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="HOME.html">Home</a></li>
+                <div class="nav-box"></div>
+            </ul>
+        </nav>
+    </div>
+
+    <!--顶部头图-->
+    <div class="title" id="title" style="background-image: url('../picture/1.png');">
+    </div>
+    <!--饼状图-->
+    <div class="wrapper">
+        <h1 style="text-align: left;">Bacis Info</h1>
+        <div class="pie-charts">
+
+            <!--游客信息-->
+            <div class="pieID--Tourist pie-chart--wrapper">
+                <h2>Tourist</h2>
+                <div class="pie-chart">
+                    <div class="pie-chart__pie"></div>
+                    <ul class="pie-chart__legend">
+                        <!--当前游客数量-->
+                        <li><em>Current number of tourist</em><span id="1.1">358</span></li>
+                        <!--剩余容量-->
+                        <li><em>Residual capacity</em><span id="1.2">358</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--旅游车辆-->
+            <div class="pieID--TouristVehicle pie-chart--wrapper">
+                <h2>Tourist Vehicle</h2>
+                <div class="pie-chart">
+                    <div class="pie-chart__pie"></div>
+                    <ul class="pie-chart__legend">
+                        <!--正在使用的车辆-->
+                        <li><em>Vehicles in use</em><span id="2.1">768</span></li>
+                        <!--闲置车辆-->
+                        <li><em>Idle vehicle</em><span id="2.2">232</span></li>
+                        <!--待维修车辆-->
+                        <li><em>Vehicle to be serviced</em><span id="2.3">2</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="pie-charts">
+            <!--救援车辆-->
+            <div class="pieID--RescueVehicle pie-chart--wrapper">
+                <h2>Rescue Vehicle</h2>
+                <div class="pie-chart">
+                    <div class="pie-chart__pie"></div>
+                    <ul class="pie-chart__legend">
+                        <!--正在使用的车辆-->
+                        <li><em>Vehicles in use</em><span id="3.1">768</span></li>
+                        <!--闲置车辆-->
+                        <li><em>Idle vehicle</em><span id="3.2">232</span></li>
+                        <!--待维修车辆-->
+                        <li><em>Vehicle to be serviced</em><span id="3.3">2</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--员工-->
+            <div class="pieID--Stuff pie-chart--wrapper">
+                <h2>Stuff</h2>
+                <div class="pie-chart">
+                    <div class="pie-chart__pie"></div>
+                    <ul class="pie-chart__legend">
+                        <!--导游-->
+                        <li><em>Guide</em><span id="4.1">486</span></li>
+                        <!--应急人员-->
+                        <li><em>Emergency personnel</em><span id="4.2">156</span></li>
+                        <!--管理人员-->
+                        <li><em>Managerial personnel</em><span id="4.3">215</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--停车场-->
+            <div class="pieID--ParkingLot pie-chart--wrapper">
+                <h2>Parking Lot</h2>
+                <div class="pie-chart">
+                    <div class="pie-chart__pie"></div>
+                    <ul class="pie-chart__legend">
+                        <!--已用停车场-->
+                        <li><em>Parking space in use</em><span id="4.2">156</span></li>
+                        <!--剩余停车场-->
+                        <li><em>Idle Parking space</em><span id="4.3">215</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/Scenic.js"></script>
+    <script type="text/javascript">
+    </script>
+</body>
+
+</html>
