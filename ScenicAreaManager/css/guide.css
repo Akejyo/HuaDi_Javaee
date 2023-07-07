@@ -331,3 +331,20 @@ nav ul li:nth-child(5):hover~.nav-box {
         display: none;
     }
 }
+
+.timeInput {
+    border: 0;
+    color: #ffffff;
+    background-color: #755374;
+    border-radius: 15%;
+    padding: 5px;
+}
+
+.timeSet {
+    border: 0;
+    margin: 10px;
+    border-radius: 25%;
+    padding: 5px;
+    color: #ffffff;
+    background-color: #755374;
+}

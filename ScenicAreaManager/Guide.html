@@ -13,19 +13,18 @@
         <nav>
             <ul>
                 <li> <a>&nbsp;</a></li>
-                <li><a href="experments.html">Experiments</a></li>
-                <li><a href="project.html">Project</a></li>
-                <li><a href="team.html">Team</a></li>
+                <li><a href="../TravelAgency/HOME.html">Agency</a></li>
+                <li><a href="../HOTELS/HOME.html">Hotel</a></li>
+                <li><a href="./Scenic.html">Scenic Spot</a></li>
                 <li><a href="HOME.html">Home</a></li>
                 <div class="nav-box"></div>
             </ul>
         </nav>
     </div>
 
-
     <!--饼状图-->
     <div class="wrapper">
-        <h1 style="text-align: left;">Bacis Info</h1>
+        <h1 style="text-align: left;">Guide</h1>
         <div class="pie-charts">
 
             <!--导游信息-->
@@ -44,19 +43,8 @@
         </div>
     </div>
 
-    <!--游客列表-->
-
-    <!--搜索框-->
-    <div class="wrap">
-        <div class="search">
-            <input type="text" class="searchTerm" placeholder="Search Tourist">
-            <button type="submit" class="searchButton" onclick="search()">
-                <i class="fa fa-search"></i>
-            </button>
-        </div>
-    </div>
     <div class="nullBlock" style="height: 40px;">&nbsp;</div>
-    <!--游客列表-->
+    <!--导游列表-->
     <div class="touristListBlock">
         <table class="touristList">
             <tr>
@@ -66,29 +54,55 @@
                 <th>
                     <h1>Phone Number</h1>
                 </th>
+                <th>
+                    <h1>Working or not</h1>
+                </th>
+                <th>
+                    <h1>Time</h1>
+                </th>
             <tr>
                 <td>a</td>
                 <td>12345678910</td>
+                <!--这个Y/N的切换以及set按钮的js部分都在该.html下面的<script>里-->
+                <td class="working">Y</td>
+                <td><input type="date" class="timeInput" value="2023-01-01"><button class="timeSet">set</button></td>
+            <tr>
+                <td>b</td>
+                <td>123</td>
+                <td class="working">Y</td>
+                <td><input type="date" class="timeInput" value="2023-01-01"><button class="timeSet">set</button></td>
             </tr>
             <tr>
                 <td>b</td>
                 <td>123</td>
-            </tr>
-            <tr>
-                <td>b</td>
-                <td>123</td>
+                <td class="working">Y</td>
+                <td><input type="date" class="timeInput" value="2023-01-01"><button class="timeSet">set</button></td>
             </tr>
         </table>
-
     </div>
 
-
     <script src="js/guide.js"></script>
-    <script type="text/javascript" src="js/guideSearch.js"></script>
     <!--
     <script src="js/hotelLoad.js"></script>
     -->
-
+    <!--该部分是点击列表的函数，可以找到具体点击了哪一个表项-->
+    <script type="text/javascript">
+        //切换导游的工作状态
+        $(".working").click(function () {
+            if ($(this).html() == "N")
+                $(this).html("Y");
+            else if ($(this).html() == "Y")
+                $(this).html("N");
+        });
+        //set 导游的时间
+        $(".timeSet").click(function () {
+            //获得该set按钮的index
+            var index = $(this).index();
+            //这里index减一是因为列表第一行是表头，不是表项
+            var time = document.getElementsByClassName("timeInput")[index - 1].value;
+            alert(time);
+        });
+    </script>
 </body>
 
 </html>

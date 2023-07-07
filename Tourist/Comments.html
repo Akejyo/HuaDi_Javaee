@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link href="css/Comments.css" rel="stylesheet">
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/Comments.js"></script>
+</head>
+
+<body>
+    <div>
+        <!--顶部导航栏-->
+        <nav>
+            <ul>
+                <li> <a>&nbsp;</a></li>
+                <li><a href="../ScenicAreaManager/HOME.html">Home</a></li>
+                <div class="nav-box"></div>
+            </ul>
+        </nav>
+    </div>
+    <div class="content">
+        <div class="comments">
+            <div class="editor">
+                <div class="editor-header">
+                    <a href='#' data-role='bold'>B</a>
+                    <a href='#' data-role='italic'>I</a>
+                    <a href='#' data-role='underline'>U</a>
+                    <a href='#' data-role='justifyleft'><i class="menu-left"></i></a>
+                    <a href='#' data-role='justifycenter'><i class="menu-center"></i></a>
+                    <a href='#' data-role='justifyright'><i class="menu-right"></i></a>
+                </div>
+                <div id="text" class="editor-content" contenteditable>
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="submitbox">
+                <div class="submit" id="submit" onclick=javescrpt:Submit_Comments()>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span> SUBMIT
+                </div>
+            </div>
+
+            <div class="list-comments">
+                <div>Hello!</div>
+                <div>My name's Tuan Linh.</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

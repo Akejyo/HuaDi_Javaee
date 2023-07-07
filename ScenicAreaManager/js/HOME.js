@@ -36,7 +36,7 @@
  }
 
  // 跳转到星级酒店
- function jumpHOME() {
+ function jumpHotel() {
      var timer = setInterval(disappear, 1);
      var val1 = 1;
      var Sun = document.getElementById('sun');
@@ -48,13 +48,13 @@
          val1 -= 0.01;
          if (val1 <= 0) {
              clearInterval(timer);
-             window.location.href = "HOTELS/HOME.html";
+             window.location.href = "../HOTELS/HOME.html";
          }
      }
  }
 
  // 跳转到旅行社
- function jumpRescueVehicle() {
+ function jumpTravelAgency() {
      var timer = setInterval(disappear, 1);
      var val1 = 1;
      var Sun = document.getElementById('sun');

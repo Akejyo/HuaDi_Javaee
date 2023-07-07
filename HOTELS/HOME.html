@@ -8,20 +8,32 @@
 </head>
 
 <body>
+    <script>
+        document.documentElement.style.overflow = 'hidden';
+    </script>
     <div id="sun" class="sun" style="opacity: 0;">
         <div class="earth">
             <div class="moon"></div>
         </div>
     </div>
+
     <div id="body_box" class="body_box" style="opacity: 0;">
-        <h2>Scenic Spot Manager</h2>
+        <h2>Hotel Manage</h2>
         <form>
+            <!--return-->
+            <div class="submit" id="submit" onclick=javescrpt:jumpBack()>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span> Go Back
+            </div>
+
             <!--1-->
             <div class="submit" id="submit" onclick=javescrpt:jump1()>
                 <span></span>
                 <span></span>
                 <span></span>
-                <span></span> Hotel1
+                <span></span> Buckingham Palace
             </div>
 
             <!--2-->
@@ -29,7 +41,7 @@
                 <span></span>
                 <span></span>
                 <span></span>
-                <span></span> Hotel2
+                <span></span> Capsule hotel
             </div>
 
             <!--3-->
@@ -37,7 +49,7 @@
                 <span></span>
                 <span></span>
                 <span></span>
-                <span></span> Hotel3
+                <span></span> Greentree Inn
             </div>
 
             <!--4-->
@@ -45,7 +57,7 @@
                 <span></span>
                 <span></span>
                 <span></span>
-                <span></span> Hotel4
+                <span></span> Esports apartment
             </div>
 
         </form>

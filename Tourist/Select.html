@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <link href="style.css" rel="stylesheet">
-    <script type="text/javascript" src="javascript.js"></script>
+    <link href="css/Select.css" rel="stylesheet">
+    <script type="text/javascript" src="js/Select.js"></script>
 </head>
 
 <body>
@@ -16,19 +16,30 @@
             <div class="moon"></div>
         </div>
     </div>
+
     <div id="body_box" class="body_box" style="opacity: 0;">
-        <h2>Login</h2>
+        <h2>Select</h2>
         <form>
-            <!--用户名-->
+            <!--姓名-->
             <div class="user_box">
                 <input type="text" id="name" required placeholder=" " pattern=".*">
                 <label class="name_login_label">Username</label>
             </div>
-            <!--密码-->
+            <!--电话-->
             <div class="user_box">
-                <input type="password" id="password" required placeholder=" " pattern=".*">
-                <label class="password_login_label">Password</label>
+                <input type="text" id="password" required placeholder=" " pattern=".*">
+                <label class="name_login_label">Phone Number</label>
             </div>
+
+            <!--酒店-->
+            <span class="custom-dropdown big">
+                <select>
+                    <option>Buckingham Palace</option>
+                    <option>Capsule hotel</option>
+                    <option>Greentree Inn</option>
+                    <option>Esports apartment</option>
+                </select>
+            </span>
             <!--提交-->
             <div class="submit" id="submit" onclick=javescrpt:Submit_login()>
                 <span></span>
@@ -39,12 +50,16 @@
             <div>
                 <label id="wrong" style="color: red;"></label>
             </div>
-            <!--跳转到注册-->
-            <div class="jump_button">
+            <!--跳转到注册
+            
+             <div class="jump_button">
                 <span onclick=javascrtpt:jump_register()>
                     Register
                 </span>
             </div>
+            
+            -->
+
         </form>
     </div>
 

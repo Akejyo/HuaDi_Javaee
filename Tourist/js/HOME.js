@@ -17,8 +17,8 @@
      }
  }
 
- // back
- function jumpBack() {
+ // comments
+ function jumpComments() {
      var timer = setInterval(disappear, 1);
      var val1 = 1;
      var Sun = document.getElementById('sun');
@@ -30,12 +30,13 @@
          val1 -= 0.01;
          if (val1 <= 0) {
              clearInterval(timer);
-             window.location.href = "../ScenicAreaManager/HOME.html";
+             window.location.href = "Comments.html";
          }
      }
  }
- // 1
- function jump1() {
+
+ // select
+ function jumpSelect() {
      var timer = setInterval(disappear, 1);
      var val1 = 1;
      var Sun = document.getElementById('sun');
@@ -47,13 +48,13 @@
          val1 -= 0.01;
          if (val1 <= 0) {
              clearInterval(timer);
-             window.location.href = "Hotel1/info.html";
+             window.location.href = "Select.html";
          }
      }
  }
 
- // 2
- function jump2() {
+ // sos
+ function jumpSOS() {
      var timer = setInterval(disappear, 1);
      var val1 = 1;
      var Sun = document.getElementById('sun');
@@ -65,30 +66,12 @@
          val1 -= 0.01;
          if (val1 <= 0) {
              clearInterval(timer);
-             window.location.href = "Hotel2/info.html";
+             window.location.href = "../TravelAgency/HOME.html";
          }
      }
  }
 
- // 3
- function jumpRescueVehicle() {
-     var timer = setInterval(disappear, 1);
-     var val1 = 1;
-     var Sun = document.getElementById('sun');
-     var Box = document.getElementById('body_box');
-
-     function disappear() {
-         Box.style.opacity = val1;
-         Sun.style.opacity = val1;
-         val1 -= 0.01;
-         if (val1 <= 0) {
-             clearInterval(timer);
-             window.location.href = "Hotel3/info.html";
-         }
-     }
- }
-
- // 4
+ // 跳转到导游
  function jumpGuide() {
      var timer = setInterval(disappear, 1);
      var val1 = 1;
@@ -101,7 +84,45 @@
          val1 -= 0.01;
          if (val1 <= 0) {
              clearInterval(timer);
-             window.location.href = "Hotel4/info.html";
+             window.location.href = "Guide.html";
+         }
+     }
+ }
+
+
+
+ // 跳转到停车场
+ function jumpParkingLot() {
+     var timer = setInterval(disappear, 1);
+     var val1 = 1;
+     var Sun = document.getElementById('sun');
+     var Box = document.getElementById('body_box');
+
+     function disappear() {
+         Box.style.opacity = val1;
+         Sun.style.opacity = val1;
+         val1 -= 0.01;
+         if (val1 <= 0) {
+             clearInterval(timer);
+             window.location.href = "ParkingLot.html";
+         }
+     }
+ }
+
+ // 跳转到游客
+ function jumpTourist() {
+     var timer = setInterval(disappear, 1);
+     var val1 = 1;
+     var Sun = document.getElementById('sun');
+     var Box = document.getElementById('body_box');
+
+     function disappear() {
+         Box.style.opacity = val1;
+         Sun.style.opacity = val1;
+         val1 -= 0.01;
+         if (val1 <= 0) {
+             clearInterval(timer);
+             window.location.href = "Tourist.html";
          }
      }
  }
