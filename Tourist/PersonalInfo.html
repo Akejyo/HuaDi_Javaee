@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link href="css/HOME.css" rel="stylesheet">
+    <script type="text/javascript" src="js/HOME.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+</head>
+<style>
+    h3 {
+        color: rgb(80, 156, 223);
+    }
+
+    p {
+        color: aliceblue;
+    }
+</style>
+
+<body>
+    <script>
+        document.documentElement.style.overflow = 'hidden';
+    </script>
+    <div id="sun" class="sun" style="opacity: 0;">
+        <div class="earth">
+            <div class="moon"></div>
+        </div>
+    </div>
+
+
+
+    <div id="body_box" class="body_box" style="opacity: 0;">
+        <h2>Personal Info</h2>
+        <form>
+            <h3>Name:</h3>
+            <p class="name" id="name">NUll</p>
+            <h3>Phone Number:</h3>
+            <p class="phonenum" id="phonenum">NUll</p>
+            <h3>Hotel:</h3>
+            <p class="hotel" id="hotel">NUll</p>
+            <h3>Guide:</h3>
+            <p class="hotel" id="hotel">NUll</p>
+            <!--Back-->
+            <div class="submit" id="submit" onclick=javescrpt:jumpBack()>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span> Go Back
+            </div>
+
+        </form>
+    </div>
+
+
+    <script>
+        //页面box出现的动画
+        window.onload = function () {
+            var timer = setInterval(appear, 1);
+            var val1 = 0.01,
+                val2 = 0.01;
+            var Sun = document.getElementById('sun');
+            var Box = document.getElementById('body_box');
+
+            function appear() {
+                Box.style.opacity = val1;
+                Sun.style.opacity = val2;
+                val1 += 0.01;
+                val2 += 0.005;
+                if (val2 >= 1.0) { //把setInterval关了
+                    clearInterval(timer);
+                }
+            }
+        }
+
+        function jumpBack() { // 跳转到个人信息
+            var timer = setInterval(disappear, 1);
+            var val1 = 1;
+            var Sun = document.getElementById('sun');
+            var Box = document.getElementById('body_box');
+
+            function disappear() {
+                Box.style.opacity = val1;
+                Sun.style.opacity = val1;
+                val1 -= 0.01;
+                if (val1 <= 0) {
+                    clearInterval(timer);
+                    window.location.href = "Home.html";
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>

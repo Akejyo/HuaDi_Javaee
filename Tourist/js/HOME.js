@@ -17,6 +17,24 @@
      }
  }
 
+ function jumpPersonalInfo() { // 跳转到个人信息
+     var timer = setInterval(disappear, 1);
+     var val1 = 1;
+     var Sun = document.getElementById('sun');
+     var Box = document.getElementById('body_box');
+
+     function disappear() {
+         Box.style.opacity = val1;
+         Sun.style.opacity = val1;
+         val1 -= 0.01;
+         if (val1 <= 0) {
+             clearInterval(timer);
+             window.location.href = "PersonalInfo.html";
+         }
+
+     }
+ }
+
  // comments
  function jumpComments() {
      var timer = setInterval(disappear, 1);
@@ -66,7 +84,7 @@
          val1 -= 0.01;
          if (val1 <= 0) {
              clearInterval(timer);
-             window.location.href = "../TravelAgency/HOME.html";
+             window.location.href = "SOS.html";
          }
      }
  }

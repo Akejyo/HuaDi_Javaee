@@ -15,7 +15,7 @@
         <nav>
             <ul>
                 <li> <a>&nbsp;</a></li>
-                <li><a href="../ScenicAreaManager/HOME.html">Home</a></li>
+                <li><a href="HOME.html">Home</a></li>
                 <div class="nav-box"></div>
             </ul>
         </nav>
@@ -32,12 +32,13 @@
                     <a href='#' data-role='justifyright'><i class="menu-right"></i></a>
                 </div>
                 <div id="text" class="editor-content" contenteditable>
-                    <p></p>
+
                 </div>
             </div>
 
+            <!--提交-->
             <div class="submitbox">
-                <div class="submit" id="submit" onclick=javescrpt:Submit_Comments()>
+                <div class="submit" id="submit" onclick=javescrpt:submitComments()>
                     <span></span>
                     <span></span>
                     <span></span>
@@ -51,6 +52,21 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function submitComments() {
+
+            var parentDiv = document.getElementById("text");
+            var childNodes = parentDiv.childNodes;
+            var extractedContents = parentDiv.innerHTML;
+            for (var i = 0; i < childNodes.length; i++) {
+                if (childNodes[i].nodeType === Node.ELEMENT_NODE) {
+                    extractedContents += childNodes[i].innerHTML;
+                }
+            }
+            console.log(extractedContents);
+        }
+    </script>
 </body>
 
 </html>

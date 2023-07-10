@@ -87,6 +87,16 @@
     -->
     <!--该部分是点击列表的函数，可以找到具体点击了哪一个表项-->
     <script type="text/javascript">
+        /*
+                    $("table").click(function () {
+                    var td = event.target;
+                    var tr = td.parentNode;
+                    var allTr = tr.parentNode.children;
+                    var index = Array.prototype.indexOf.call(allTr, tr);
+                    alert(index);
+                });
+                */
+
         //切换导游的工作状态
         $(".working").click(function () {
             if ($(this).html() == "N")

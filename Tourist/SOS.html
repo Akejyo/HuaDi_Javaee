@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link href="css/Comments.css" rel="stylesheet">
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/Comments.js"></script>
+</head>
+
+<body>
+    <div>
+        <!--顶部导航栏-->
+        <nav>
+            <ul>
+                <li> <a>&nbsp;</a></li>
+                <li><a href="HOME.html">Home</a></li>
+                <div class="nav-box"></div>
+            </ul>
+        </nav>
+    </div>
+    <div class="content">
+        <div class="comments">
+            <div class="editor" id="Situation">
+                <div class="editor-header" style="color: aliceblue;">&nbsp;Situation description</div>
+                <div id="text" class="editor-content" contenteditable>
+
+                </div>
+            </div>
+            <div class="editor" id="Location">
+                <div class="editor-header" style="color: aliceblue;">&nbsp;Location</div>
+                <div id="text" class="editor-content" contenteditable>
+
+                </div>
+            </div>
+            <!--提交-->
+            <div class="submitbox">
+                <div class="submit" id="submit" onclick=javescrpt:submitComments()>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span> SUBMIT
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function submitComments() {
+
+            var parentDiv = document.getElementById("text");
+            var childNodes = parentDiv.childNodes;
+            var extractedContents = parentDiv.innerHTML;
+            for (var i = 0; i < childNodes.length; i++) {
+                if (childNodes[i].nodeType === Node.ELEMENT_NODE) {
+                    extractedContents += childNodes[i].innerHTML;
+                }
+            }
+            console.log(extractedContents);
+        }
+    </script>
+</body>
+
+</html>

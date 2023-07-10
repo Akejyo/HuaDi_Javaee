@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="js/jquery.js"></script>
+    <link href="css/SOS.css" rel="stylesheet">
+</head>
+
+<body>
+    <!--顶部导航栏-->
+    <div>
+        <nav>
+            <ul>
+                <li> <a>&nbsp;</a></li>
+                <li><a href="../TravelAgency/HOME.html">Agency</a></li>
+                <li><a href="../HOTELS/HOME.html">Hotel</a></li>
+                <li><a href="./Scenic.html">Scenic Spot</a></li>
+                <li><a href="HOME.html">Home</a></li>
+                <div class="nav-box"></div>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="nullBlock" style="height: 100px;">&nbsp;</div>
+    <!--导游列表-->
+    <div class="touristListBlock">
+        <table class="touristList">
+            <tr>
+                <th>
+                    <h1>Emergency Info</h1>
+                </th>
+                <th>
+                    <h1>Location</h1>
+                </th>
+                <th>
+                    <h1>Emergency vehicle</h1>
+                </th>
+                <th>
+                    <!--提交-->
+                </th>
+            <tr>
+                <td>a</td>
+                <td>
+                    <input class="location">
+                </td>
+                <td>
+                    <span class="custom-dropdown big">
+                        <select>
+                            <option>Buckingham Palace</option>
+                            <option>Capsule hotel</option>
+                            <option>Greentree Inn</option>
+                            <option>Esports apartment</option>
+                        </select>
+                    </span>
+                </td>
+                <td>
+                    <button class="submit">Submit</button>
+                </td>
+            <tr>
+                <td>b</td>
+                <td>
+                    <input class="location">
+                </td>
+                <td>
+                    <span class="custom-dropdown big">
+                        <select>
+                            <option>Buckingham Palace</option>
+                            <option>Capsule hotel</option>
+                            <option>Greentree Inn</option>
+                            <option>Esports apartment</option>
+                        </select>
+                    </span>
+                </td>
+                <td>
+                    <button class="submit">Submit</button>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+
+    <script src="js/SOS.js"></script>
+    <!--
+    <script src="js/hotelLoad.js"></script>
+    -->
+    <!--该部分是点击列表的函数，可以找到具体点击了哪一个表项-->
+    <script type="text/javascript">
+        //切换导游的工作状态
+        $(".working").click(function () {
+            if ($(this).html() == "N")
+                $(this).html("Y");
+            else if ($(this).html() == "Y")
+                $(this).html("N");
+        });
+        //set 导游的时间
+        $(".timeSet").click(function () {
+            //获得该set按钮的index
+            var index = $(this).index();
+            //这里index减一是因为列表第一行是表头，不是表项
+            var time = document.getElementsByClassName("timeInput")[index - 1].value;
+            alert(time);
+        });
+    </script>
+</body>
+
+</html>
